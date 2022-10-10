@@ -11,6 +11,8 @@
     //Global variables that will be used for the game
     let computerSelection = getComputerChoice();
     let playerSelection = 'paper';
+    let computerScore = 0;
+    let playerScore = 0;
 
     // Function that will be used for the computer to randomly choose a game option from the array we created under the name options 
     function getComputerChoice() {
@@ -18,23 +20,28 @@
       return options[Math.floor(Math.random() * options.length )];
     }
 
+    //function that stores the results for each round of the game depending on the player choice and computer random choice
     function playGame(playerSelection,computerSelection) {
       if(playerSelection == computerSelection) {
-        return 'Its a draw!';
+        return alert(`Its a draw. The current score between player and bot is ${playerScore} to ${computerScore}.`)
       } else if(playerSelection == 'rock' && computerSelection == 'scissors') {
-        return "You won!";
+        playerScore++;
+        return alert(`You won! Your score: ${playerScore}. Computer Score: ${computerScore}`);
       } else if(playerSelection == 'paper' && computerSelection == 'rock') {
-        return 'You won!';
+        playerScore++;
+        return alert(`You won! Your score: ${playerScore}. Computer Score: ${computerScore}`);
       } else if(playerSelection == 'scissors' && computerSelection == 'paper') {
-        return 'You won!';
+        playerScore++;
+        return alert(`You won! Your score: ${playerScore}. Computer Score: ${computerScore}`);
       } else {
-        return 'You lost!';
+        computerScore++;
+        return alert(`You Lost! Your score: ${playerScore}. Computer Score: ${computerScore}`);
       }
     }
-
+    //Function that will store all the previous functions in to one single game in a series best of five matches
     function gamePlay() {
-      for( x = 1; x < 5; x++) {
-        let playerSelection = prompt("Choose between rock, paper, or scissors: ").toLowerCase();
+      for( x = 0; x < 5; x++) {
+        let playerSelection = prompt("In a best of five against the bot. Choose between rock, paper, or scissors: ").toLowerCase();
         let computerSelection = getComputerChoice();
         playGame(playerSelection,computerSelection);
       }
