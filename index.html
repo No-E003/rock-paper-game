@@ -8,9 +8,28 @@
 </head>
 <body>
   <script>
+    //Global variables that will be used for the game
+    let computerSelection = getComputerChoice();
+    let playerSelection = 'paper';
+
+    // Function that will be used for the computer to randomly choose a game option from the array we created under the name options 
     function getComputerChoice() {
-      const options = ['rock','paper','scissors']
-      return options[Math.floor(Math.random() * options.length )]
+      const options = ['rock','paper','scissors'];
+      return options[Math.floor(Math.random() * options.length )];
+    }
+
+    function playGame(playerSelection,computerSelection) {
+      if(playerSelection == computerSelection) {
+        return 'Its a draw!';
+      } else if(playerSelection == 'rock' && computerSelection == 'scissors') {
+        return "You won!";
+      } else if(playerSelection == 'paper' && computerSelection == 'rock') {
+        return 'You won!';
+      } else if(playerSelection == 'scissors' && computerSelection == 'paper') {
+        return 'You won!';
+      } else {
+        return 'You lost!';
+      }
     }
   </script>
 </body>
