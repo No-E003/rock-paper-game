@@ -31,6 +31,14 @@
         return 'You lost!';
       }
     }
+
+    function gamePlay() {
+      for( x = 1; x < 5; x++) {
+        let playerSelection = prompt("Choose between rock, paper, or scissors: ").toLowerCase();
+        let computerSelection = getComputerChoice();
+        playGame(playerSelection,computerSelection);
+      }
+    }
   </script>
 </body>
 </html>
