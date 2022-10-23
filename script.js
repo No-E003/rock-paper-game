@@ -13,19 +13,29 @@ function getComputerChoice() {
 function playGame(playerSelection) {
   let computerSelection = getComputerChoice();
   if(playerSelection == computerSelection) {
-    return alert(`Its a draw. You chose ${playerSelection} and the computer chose ${computerSelection}. The current score between player and bot is ${playerScore} to ${computerScore}.`)
+    p.innerHTML = `Its a tie! You chose ${playerSelection} and the computer chose ${computerSelection}` +'.<br/>' + `Player Score: ${playerScore}` +'.<br/>' + `Computer Score: ${computerScore}` + '.<br/>';
+    container.appendChild(p);
+    //return alert(`Its a draw. You chose ${playerSelection} and the computer chose ${computerSelection}. The current score between player and bot is ${playerScore} to ${computerScore}.`)
   } else if(playerSelection == 'rock' && computerSelection == 'scissors') {
     playerScore++;
-    return alert(`You won! You chose ${playerSelection} and the computer chose ${computerSelection}. Your score: ${playerScore} Computer Score: ${computerScore}`);
+    p.innerHTML = `You win! You chose ${playerSelection} and the computer chose ${computerSelection}` +'.<br/>' + `Player Score: ${playerScore}` +'.<br/>' + `Computer Score: ${computerScore}` + '.<br/>';
+    container.appendChild(p);
+    //return alert(`You won! You chose ${playerSelection} and the computer chose ${computerSelection}. Your score: ${playerScore} Computer Score: ${computerScore}`);
   } else if(playerSelection == 'paper' && computerSelection == 'rock') {
     playerScore++;
-    return alert(`You won! You chose ${playerSelection} and the computer chose ${computerSelection}. Your score: ${playerScore}. Computer Score: ${computerScore}`);
+    p.innerHTML = `You win! You chose ${playerSelection} and the computer chose ${computerSelection}` +'.<br/>' + `Player Score: ${playerScore}` +'.<br/>' + `Computer Score: ${computerScore}` + '.<br/>';
+    container.appendChild(p);
+    //return alert(`You won! You chose ${playerSelection} and the computer chose ${computerSelection}. Your score: ${playerScore}. Computer Score: ${computerScore}`);
   } else if(playerSelection == 'scissors' && computerSelection == 'paper') {
     playerScore++;
-    return alert(`You won! You chose ${playerSelection} and the computer chose ${computerSelection}. Your score: ${playerScore}. Computer Score: ${computerScore}`);
+    p.innerHTML = `You win! You chose ${playerSelection} and the computer chose ${computerSelection}` +'.<br/>' + `Player Score: ${playerScore}` +'.<br/>' + `Computer Score: ${computerScore}` + '.<br/>';
+    container.appendChild(p);
+    //return alert(`You won! You chose ${playerSelection} and the computer chose ${computerSelection}. Your score: ${playerScore}. Computer Score: ${computerScore}`);
   } else {
     computerScore++;
-    return alert(`You Lost! You chose ${playerSelection} and the computer chose ${computerSelection}. Your score: ${playerScore}. Computer Score: ${computerScore}`);
+    p.innerHTML = `You Lose! You chose ${playerSelection} and the computer chose ${computerSelection}` +'.<br/>' + `Player Score: ${playerScore}` +'.<br/>' + `Computer Score: ${computerScore}` + '.<br/>';
+    container.appendChild(p);
+    //return alert(`You Lost! You chose ${playerSelection} and the computer chose ${computerSelection}. Your score: ${playerScore}. Computer Score: ${computerScore}`);
   }
 };
 
@@ -57,3 +67,10 @@ buttons.forEach((button) => {
     playGame(button.value);
   });
 });
+
+const container = document.querySelector('#results');
+
+const p  = document.createElement('p');
+//p.innerHTML = `Computer Score: ${computerScore}` +'.<br/>' + `Player Score: ${playerScore}` + '.<br/>'
+p.style.color = 'white';  
+//container.appendChild(p);
