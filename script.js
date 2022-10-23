@@ -54,6 +54,6 @@ buttons.forEach((button) => {
 
   // and for each one we add a 'click' listener
   button.addEventListener('click',() => {
-    alert(button.value);
+    playGame(button.value);
   });
 });
