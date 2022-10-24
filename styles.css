@@ -25,12 +25,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 50px;
+  padding-top: 50px;
 }
 
 img {
   width: 300px;
   border-radius: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
+}
+
+.text {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
 }
 
 button{
@@ -39,6 +50,9 @@ button{
   padding: 0;
 }
 
-.results {
-  flex: 1;
+.footer {
+  position: fixed;
+  bottom: 0;
+  font-size: 17px;
+  color: orange;
 }
