@@ -1,3 +1,44 @@
 body {
   background: url(./images/alberta.jpg);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: cursive;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.header h1{
+  color: orange;
+  font-size: 40px;
+}
+
+#container {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+button{
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.results {
+  flex: 1;
 }
