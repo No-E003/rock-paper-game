@@ -55,8 +55,8 @@ button{
   font-size: 30px;
 }
 
-#results {
-  margin: 0;
+.results {
+  padding-top: 24px;
 }
 
 .footer {
