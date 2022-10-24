@@ -9,7 +9,7 @@ function getComputerChoice() {
   return options[Math.floor(Math.random() * options.length )];
 };
 
-//function that stores the results for each round of the game depending on the player choice and computer random choice
+//function that stores the results for each round of the game depending on the player choice and returns the results with a score
 function playGame(playerSelection) {
   let computerSelection = getComputerChoice();
   if(playerSelection == computerSelection) {
@@ -71,6 +71,5 @@ buttons.forEach((button) => {
 const container = document.querySelector('#results');
 
 const p  = document.createElement('p');
-//p.innerHTML = `Computer Score: ${computerScore}` +'.<br/>' + `Player Score: ${playerScore}` + '.<br/>'
 p.style.color = 'white';  
-//container.appendChild(p);
+p.style.fontSize = "24px";
