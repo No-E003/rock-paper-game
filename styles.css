@@ -4,6 +4,7 @@ body {
   flex-direction: column;
   height: 100vh;
   margin: 0;
+  padding: 0;
   overflow: hidden;
   font-family: cursive;
   text-align: center;
@@ -30,7 +31,7 @@ body {
 
 img {
   width: 300px;
-  border-radius: 10px;
+  border-radius: 20%;
 }
 
 .buttons {
@@ -64,4 +65,31 @@ button{
   bottom: 0;
   font-size: 17px;
   color: orange;
+}
+
+/* This is new css code that */
+img {
+  border: 4px solid orange;
+}
+
+button {
+  cursor: pointer;
+}
+
+ button:hover {
+  animation: pulse 1.6s;
+ }
+
+ @keyframes pulse {
+  0% {
+    transform: scale(.85);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 50px rgba(#5a99d4, 0);
+  }
+    100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(#5a99d4, 0);
+  }
 }
