@@ -73,3 +73,4 @@ const container = document.querySelector('#results');
 const p  = document.createElement('p');
 p.style.color = 'white';  
 p.style.fontSize = "24px";
+p.style.margin = "0";

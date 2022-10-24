@@ -50,8 +50,13 @@ button{
   padding: 0;
 }
 
-.results {
-  padding-top: 20px;
+.resultTitle {
+  color: white;
+  font-size: 30px;
+}
+
+#results {
+  margin: 0;
 }
 
 .footer {
