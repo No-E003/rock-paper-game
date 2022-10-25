@@ -37,40 +37,39 @@ function playGame(playerSelection) {
     container.appendChild(p);
     //return alert(`You Lost! You chose ${playerSelection} and the computer chose ${computerSelection}. Your score: ${playerScore}. Computer Score: ${computerScore}`);
   }
+  if(playerScore == 5) {
+    p.style.display = "block";
+    p.textContent = "You win! Please refresh if you would like to play again";
+    disableButtons();
+  } else if (computerScore == 5) {
+    p.style.display = "block";
+    p.textContent = "The computer Won! Please refresh if you would like to play again.";
+    disableButtons();
+  }
 };
 
-//function result() {
-  //if(playerScore == computerScore) {
-    //return alert(`No one wins! Final score: ${playerScore} to ${computerScore}`);
-  //} else if(playerScore > computerScore) {
-    //return alert(`You win! Final score: ${playerScore} to ${computerScore}`);
-  //} else {
-    //return alert(`The computer wins! Final score: ${playerScore} to ${computerScore}`);
-  //}
-//};
-
- //Function that will store all the previous functions in to one single game in a series best of five matches
- //function gamePlay() {
-  //let playerSelection = prompt("In a best of five against the computer. Choose between rock, paper, or scissors: ").toLowerCase();
-  //let computerSelection = getComputerChoice();
-  //playGame(playerSelection,computerSelection);
-  //return result();
-//};
+function disableButtons() {
+  buttons.forEach(elem => {
+    elem.disabled = true;
+  })
+}
 
 // buttons is a node list. It looks and acts much like an array.
 const buttons = document.querySelectorAll('button');
+
+//displays the results
+const container = document.querySelector('#results');
+
 // we use the .forEach method to iterate through each button
 buttons.forEach((button) => {
-
   // and for each one we add a 'click' listener
   button.addEventListener('click',() => {
-    playGame(button.value);
+    playGame(button.value); 
   });
 });
 
-const container = document.querySelector('#results');
-
 const p  = document.createElement('p');
-p.style.color = 'white';  
+p.style.color = 'orange';  
 p.style.fontSize = "24px";
+p.style.fontWeight = "500";
 p.style.margin = "0";
